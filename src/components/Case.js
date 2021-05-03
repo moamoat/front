@@ -1,5 +1,6 @@
 import React from 'react'
-import { Menu } from 'antd';
+import { Menu } from 'antd'
+
 
 
 const { SubMenu } = Menu;
@@ -19,6 +20,11 @@ function Case({ lists }) {
         <Menu.Item key={index} style={{ padding: 0 }}>
             { index + 1}: 위치: { list.name} 위도: { list.position.La}, 경도: { list.position.Ma}
         </Menu.Item >));
+
+    
+//    const result_02 = spawn('python', ['list.position.Ma', 'list.position.La']); result_02.stdout.on('data', (result)=>{ console.log(result.toString()); });
+
+
 
     console.log(fixlist)
     return (
