@@ -12,3 +12,44 @@
 .inputForm * {
   left: 30%;
 }
+.ant-modal-content{
+  width:800px;
+}
+.ant-modal-header .ant-modal-title {
+  font-size:25px;
+  font-weight:bold;
+  
+}
+hr {
+  opacity:0.3;
+}
+img {
+  width:30px;
+  height:30px;
+}
+#barchart{
+  width: 300px ;
+  height: 300px !important;
+ 
+}
+.dis {
+  display: flex;
+  height: 70px;
+}
+.origin {
+  width: 50%;
+  
+}
+.change {
+  width: 50%;
+}
+#barchart2{
+  width: 300px!important; 
+  height: 300px !important;
+ 
+}
+#barchart3{
+  width: 500px !important; 
+  height: 400px !important;
+ 
+}

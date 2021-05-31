@@ -1,28 +1,27 @@
 import MapContainer from './components/MapContainer'
-// import SearchPlace from './components/SearchPlace'
-
+import Popup from './components/Popup'
 import styles from "./Css/App.module.css"
 import './Css/Case.css'
 import 'antd/dist/antd.css';
-// import './App.css';
+import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-
-
-
 
 function App() {
   const { SubMenu } = Menu;
-  const { Header, Content, Sider } = Layout;
+  const { Header, Content } = Layout;
+
+
   return (
     <div className="App">
+      <Popup/>
       <Layout>
         <Header className="header">
           {/* 제목 부분 */}
           <div className="logo" />
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
             <Menu.Item key="1">모아모아</Menu.Item>
-
+        
+              
           </Menu>
         </Header>
         <Content style={{ padding: '0 30px' }}>
@@ -47,7 +46,7 @@ function App() {
               {/* 전체적인 넓이 */}
               <div className={styles.width} >
                 <MapContainer />
-
+                
               </div>
             </Content>
           </Layout>

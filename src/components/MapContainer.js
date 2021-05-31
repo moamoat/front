@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import SearchPlace from './SearchPlace'
 import Case from './Case'
-import Line from './Line'
+
 import '../Css/MapContainer.css'
 const { kakao } = window;
 
 function MapContainer() {
     const [a, setA] = useState({
         // id:1,
-        name: '서울시',
+        name: '서울특별시 센터',
         position: { La: 126.97863092300126, Ma: 37.56399493761861 }
     })
     const [b, setB] = useState([])
     // const [id, setId] = useState(0)
     const [place, setPlace] = useState('서울시')
+    
     // const [name, setName] = useState('')
 
 
@@ -106,29 +107,20 @@ function MapContainer() {
 
         // 행정동 주소가 있으면 그걸 주고 없으면 법정동 상세주소 를 주자(도로명 주소)
         window.markerClick = () => {
-            // function getName() {
-            //     searchAddrFromCoords(marker.getPosition(), function (result, status) {
-            //         if (status === kakao.maps.services.Status.OK) {
-            //             let detailAddr = !!result[0].road_address ?
-            //                 '<div>도로명 주소 : ' + result[0].road_address.address_name + '</div>' : '';
-            //                 detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-
-            //             return (`<div className="markerAddr">${detailAddr}   </div>`)
-            //         }
-
-            //     })
-            // }
+           
             alert('저장 되었습니다.')
             let x = {
-                // name: getName(),
+                name: infowindow.a.innerText.slice(12,) ,
                 position: marker.getPosition(),
-            }
+            } 
+            // console.log(x.name)
 
             setA(x)
 
 
 
         }
+       
 
         kakao.maps.event.addListener(map, 'idle', function () {
             searchAddrFromCoords(map.getCenter(), displayCenterInfo);
@@ -195,8 +187,7 @@ function MapContainer() {
 
                 <SearchPlace onCreate={handleCreate} />
             </div>
-            <Line /> 
-
+            
 
 
 
